@@ -67,12 +67,12 @@ def main():
             sys.exit('Something went wrong...\nCheck files and retry.')
 
         s_files = glob.glob(os.path.join(out_dir, '???.mp3'))
-        if len(s_files) != 54:
+        if len(s_files) != 52:
             sys.exit('Expected 54 files but got {}.\n'
                      'Aborting at {}'.format(len(s_files), f_name))
 
         # Rename files sequentially and skip Glossika intro & outro
-        s_files = sorted(s_files)[2:52]
+        s_files = sorted(s_files)[1:51]
         count = from_phrase
         for f in s_files:
             name = '{}-{:04d}.mp3'.format(language, count)
